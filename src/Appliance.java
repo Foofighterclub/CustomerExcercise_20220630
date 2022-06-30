@@ -26,4 +26,15 @@ public class Appliance {
     this.status = status;
   }
 
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) {
+      return true;
+    } else {
+      return (obj instanceof Appliance) &&
+          ((Appliance) obj).getId().equals(this.id) &&
+          ((Appliance) obj).getCustomerId().equals(this.customerId) &&
+          ((Appliance) obj).isStatus() == this.status;
+    }
+  }
 }
